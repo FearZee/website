@@ -36,14 +36,14 @@ export const FeatureRightCard = () => {
         <h2 className="h2">
           Verantwortungsvolle KI: Transparenz für eine sichere und faire Nutzung
         </h2>
-        <p className="lg:max-w-[80%] mt-12 mb-12">
+        <p className="lg:max-w-[80%] lg:mt-12 sm:mb-12 md:my-4 my-8">
           Wir glauben fest daran, dass Transparenz der Schlüssel zur Schaffung
           vertrauenswürdiger künstlicher Intelligenz ist. Durch unsere
           Verpflichtung zu diesen Prinzipien möchten wir eine positive und
           verantwortungsvolle Nutzung von KI fördern.
         </p>
       </div>
-      <MultiCarousel itemsToShow={2} items={featureItems} />
+      <MultiCarousel items={featureItems} />
     </section>
   );
 };

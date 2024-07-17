@@ -27,7 +27,7 @@ export const FeatureRightListSection = () => {
           Innovative Technologien für Ihr nachhaltiges Wachstum und Ihre
           digitale Transformation
         </h2>
-        <p className="lg:max-w-[80%] mt-12">
+        <p className="lg:max-w-[80%] lg:mt-12 md:mt-4 mt-8 mb-8 md:mb-0">
           Unsere Vision ist es, Unternehmen mit hochmodernen
           Intelligenzdiensten, Technologien und KI-Produkten auszustatten, die
           Komplexitäten vereinfachen und Effizienz steigern. Wir möchten die
@@ -35,13 +35,13 @@ export const FeatureRightListSection = () => {
           digitalen Landschaft sein.
         </p>
       </div>
-      <div className="flex flex-col lg:gap-6 gap-8 lg:ml-12 mt-12 lg:mt-0 w-fit">
+      <div className="flex flex-col lg:gap-6 md:gap-8 gap-12 lg:ml-12 sm:mt-12 mt-8 lg:mt-0 w-fit">
         {featureItems.map((item, index) => (
           <article key={index}>
             <h3 className="text-xl text-indigo-600 font-semibold mb-1">
               {item.title}
             </h3>
-            <p className="text-md">{item.text}</p>
+            <p className="text-md lg:w-full w-4/5">{item.text}</p>
           </article>
         ))}
       </div>

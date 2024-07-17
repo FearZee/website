@@ -10,23 +10,23 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <Space h={3} />
+      <Space h={4} />
       <HowDoesItWork />
-      <Space h={10} />
+      <Space h={28} />
       <FeatureRightListSection />
-      <Space h={10} />
+      <Space h={28} />
 
       <TestimonialsSection />
-      <Space h={8} />
+      <Space h={28} />
 
       <FeatureRightCard />
-      <Space h={8} />
+      <Space h={28} />
 
       <CallToActionSection
         text="Entfesseln Sie das Potenzial Ihrer Daten für Ihren maximalen Erfolg mit KI-Unterstützung"
         ct2Text="Gespräch vereinbaren"
       />
-      <Space h={8} />
+      <Space h={28} />
     </div>
   );
 }

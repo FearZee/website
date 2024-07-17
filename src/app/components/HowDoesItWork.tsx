@@ -72,10 +72,10 @@ const WorkItem = ({ title, description, icon, index }: WorkItemProps) => {
   return (
     <article className="p-6 flex flex-col gap-4 bg-indigo-100 rounded-2xl xl:w-[600px] md:w-[48%]">
       <div className="flex gap-4">
-        <div className="rounded-[100%] p-4 bg-white w-20 h-20 text-3xl flex items-center justify-center">
+        <div className="rounded-[100%] sm:p-4 p-2 bg-white sm:w-20 sm:h-20 h-10 w-10 sm:text-3xl text-xl flex items-center justify-center">
           {index}
         </div>
-        <Image {...icon} alt={title} />
+        <Image {...icon} alt={title} className="sm:w-20 sm:h-20                                                                      h-12 w-12" />
       </div>
       <h3 className="text-[#4F46E5] text-xl font-semibold">{title}</h3>
       <p>{description}</p>
