@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import MultiCarousel from "./MultiCarousel";
 
 const featureItems = [
@@ -30,12 +31,12 @@ const featureItems = [
 
 export const FeatureRightCard = () => {
   return (
-    <section className="flex mt-20">
-      <div className="max-w-[32rem]">
-        <h2 className="text-5xl font-bold leading-normal">
+    <section className={classNames("section", "flex lg:flex-row flex-col")}>
+      <div className="lg:max-w-[32rem]">
+        <h2 className="h2">
           Verantwortungsvolle KI: Transparenz für eine sichere und faire Nutzung
         </h2>
-        <p className="max-w-[80%] mt-12">
+        <p className="lg:max-w-[80%] mt-12 mb-12">
           Wir glauben fest daran, dass Transparenz der Schlüssel zur Schaffung
           vertrauenswürdiger künstlicher Intelligenz ist. Durch unsere
           Verpflichtung zu diesen Prinzipien möchten wir eine positive und

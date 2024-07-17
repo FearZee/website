@@ -1,3 +1,5 @@
+import classNames from "classnames";
+
 const featureItems = [
   {
     title: "Nachhaltiges Wachstum",
@@ -19,13 +21,13 @@ const featureItems = [
 
 export const FeatureRightListSection = () => {
   return (
-    <section className="flex mt-24">
-      <div className="max-w-[44rem]">
-        <h2 className="text-5xl font-bold leading-normal">
+    <section className={classNames("section", "flex flex-col lg:flex-row")}>
+      <div className="lg:max-w-[44rem]">
+        <h2 className="h2">
           Innovative Technologien für Ihr nachhaltiges Wachstum und Ihre
           digitale Transformation
         </h2>
-        <p className="max-w-[80%] mt-12">
+        <p className="lg:max-w-[80%] mt-12">
           Unsere Vision ist es, Unternehmen mit hochmodernen
           Intelligenzdiensten, Technologien und KI-Produkten auszustatten, die
           Komplexitäten vereinfachen und Effizienz steigern. Wir möchten die
@@ -33,7 +35,7 @@ export const FeatureRightListSection = () => {
           digitalen Landschaft sein.
         </p>
       </div>
-      <div className="flex flex-col gap-6 ml-12 w-fit">
+      <div className="flex flex-col lg:gap-6 gap-8 lg:ml-12 mt-12 lg:mt-0 w-fit">
         {featureItems.map((item, index) => (
           <article key={index}>
             <h3 className="text-xl text-indigo-600 font-semibold mb-1">

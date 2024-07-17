@@ -25,7 +25,7 @@ export const TestimonialsSection = () => {
   );
 
   return (
-    <section className="mt-20">
+    <section className="section">
       <article className="flex flex-col gap-12 justify-center align-middle">
         <div className="flex gap-1 justify-center">
           <IconStarFilled />
@@ -34,7 +34,7 @@ export const TestimonialsSection = () => {
           <IconStarFilled />
           <IconStarFilled />
         </div>
-        <p className="text-3xl text-center leading-normal">
+        <p className="sm:text-3xl text-2xl text-center sm:leading-normal leading-normal">
           {selectedTestimonial.text}
         </p>
         <div>

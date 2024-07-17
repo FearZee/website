@@ -26,7 +26,7 @@ const config: Config = {
         h1: { fontSize: theme("fontSize.2xl") },
         h2: { fontSize: theme("fontSize.xl") },
         p: { fontSize: theme("fontSize.lg") },
-        section: { maxWidth: theme("maxWidth.7xl"), margin: "0 auto" },
+        // section: { maxWidth: theme("maxWidth.7xl"), margin: "0 auto" },
       });
     }),
   ],

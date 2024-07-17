@@ -19,10 +19,25 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: #f2f1f1;
+  margin: 0 0 0 1rem;
+
+  @media screen and (max-width: 640px) {
+    margin: 0 0 0 0;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .section {
+    @apply max-w-7xl lg:max-w-screen-xl lg:mx-auto mx-4 relative 2xl:overflow-visible overflow-hidden;
+  }
+
+  .h2 {
+    @apply lg:text-5xl text-3xl font-bold leading-normal;
   }
 }

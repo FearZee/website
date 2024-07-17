@@ -44,16 +44,14 @@ const items = [
 
 export const HowDoesItWork = () => {
   return (
-    <section className="max-w-screen-xl mx-auto mt-16">
-      <h2 className="text-5xl font-bold text-center">
-        Wie funktioniert unsere AI Plattform
-      </h2>
+    <section className="section">
+      <h2 className="h2">Wie funktioniert unsere AI Plattform</h2>
       <div className="flex flex-wrap gap-6 mt-12">
         {items.map((item) => (
           <WorkItem key={item.index} {...item} />
         ))}
       </div>
-      <p className="w-[600px] mt-8 ">
+      <p className="lg:w-[48%] mt-8">
         Wir stehen Ihnen jederzeit für Fragen und Anpassungen zur Verfügung.
         Unser Team unterstützt Sie dabei, die Lösung optimal in Ihre
         Unternehmensabläufe zu integrieren und das volle Potenzial Ihrer Daten
@@ -72,7 +70,7 @@ interface WorkItemProps {
 
 const WorkItem = ({ title, description, icon, index }: WorkItemProps) => {
   return (
-    <article className="p-6 flex flex-col gap-4 bg-indigo-100 rounded-2xl w-[600px]">
+    <article className="p-6 flex flex-col gap-4 bg-indigo-100 rounded-2xl xl:w-[600px] md:w-[48%]">
       <div className="flex gap-4">
         <div className="rounded-[100%] p-4 bg-white w-20 h-20 text-3xl flex items-center justify-center">
           {index}
