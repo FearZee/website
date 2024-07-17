@@ -1,4 +1,5 @@
 import { CallToActionSection } from "./components/CallToActionSection";
+import { FAQ } from "./components/FAQ";
 import { FeatureRightCard } from "./components/FeatureRightCard";
 import { FeatureRightListSection } from "./components/FeatureRightListSection";
 import { HeroSection } from "./components/HeroSection";
@@ -26,6 +27,8 @@ export default function Home() {
         text="Entfesseln Sie das Potenzial Ihrer Daten für Ihren maximalen Erfolg mit KI-Unterstützung"
         ct2Text="Gespräch vereinbaren"
       />
+      <Space h={28} />
+      <FAQ />
       <Space h={28} />
     </div>
   );
