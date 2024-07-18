@@ -21,7 +21,13 @@ const featureItems = [
 
 export const FeatureRightListSection = () => {
   return (
-    <section className={classNames("section", "flex flex-col lg:flex-row")}>
+    <section
+      className={classNames(
+        "section",
+        "flex flex-col lg:flex-row scroll-my-16"
+      )}
+      id="our-mission"
+    >
       <div className="lg:max-w-[44rem]">
         <h2 className="h2">
           Innovative Technologien für Ihr nachhaltiges Wachstum und Ihre

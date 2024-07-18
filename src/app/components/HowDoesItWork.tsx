@@ -44,8 +44,10 @@ const items = [
 
 export const HowDoesItWork = () => {
   return (
-    <section className="section">
-      <h2 className="h2">Wie funktioniert unsere AI Plattform</h2>
+    <section className="section scroll-my-16" id="how-does-it-work">
+      <h2 className="h2 md:text-center">
+        Wie funktioniert unsere AI Plattform
+      </h2>
       <div className="flex flex-wrap gap-6 mt-12">
         {items.map((item) => (
           <WorkItem key={item.index} {...item} />
@@ -75,7 +77,11 @@ const WorkItem = ({ title, description, icon, index }: WorkItemProps) => {
         <div className="rounded-[100%] sm:p-4 p-2 bg-white sm:w-20 sm:h-20 h-10 w-10 sm:text-3xl text-xl flex items-center justify-center">
           {index}
         </div>
-        <Image {...icon} alt={title} className="sm:w-20 sm:h-20                                                                      h-12 w-12" />
+        <Image
+          {...icon}
+          alt={title}
+          className="sm:w-20 sm:h-20                                                                      h-12 w-12"
+        />
       </div>
       <h3 className="text-[#4F46E5] text-xl font-semibold">{title}</h3>
       <p>{description}</p>

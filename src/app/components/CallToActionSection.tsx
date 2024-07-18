@@ -18,7 +18,9 @@ export const CallToActionSection = ({
       )}
     >
       <h2 className={classNames("h2", "text-center")}>{text}</h2>
-      <C2AButton className="w-[16rem]">{ct2Text}</C2AButton>
+      <C2AButton className="w-[16rem]" href="/contact">
+        {ct2Text}
+      </C2AButton>
     </section>
   );
 };

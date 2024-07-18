@@ -1,19 +1,28 @@
 import classNames from "classnames";
+import Link from "next/link";
 
 interface C2AButtonProps {
   children: React.ReactNode;
+  href: string;
   className?: string;
 }
 
-export const C2AButton = ({ children, className }: C2AButtonProps) => {
+export const C2AButton = ({
+  children,
+  href,
+  className,
+  ...props
+}: C2AButtonProps) => {
   return (
-    <button
+    <Link
+      href={href || ""}
       className={classNames(
         className,
-        "rounded-[1rem] font-medium bg-[#E6B947] p-4 text-lg hover:bg-[#e1a72e]"
+        "rounded-[1rem] font-medium bg-[#E6B947] p-3 text-lg hover:bg-[#e1a72e] block text-center"
       )}
+      {...props}
     >
       {children}
-    </button>
+    </Link>
   );
 };

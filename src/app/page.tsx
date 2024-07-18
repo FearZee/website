@@ -1,9 +1,11 @@
 import { CallToActionSection } from "./components/CallToActionSection";
+import { ContactPage } from "./components/ContactPage";
 import { FAQ } from "./components/FAQ";
 import { FeatureRightCard } from "./components/FeatureRightCard";
 import { FeatureRightListSection } from "./components/FeatureRightListSection";
 import { HeroSection } from "./components/HeroSection";
 import { HowDoesItWork } from "./components/HowDoesItWork";
+import { ProblemSection } from "./components/ProblemSection";
 import { Space } from "./components/Space";
 import { TestimonialsSection } from "./components/TestimonialsSection";
 
@@ -12,6 +14,9 @@ export default function Home() {
     <div>
       <HeroSection />
       <Space h={4} />
+      <ProblemSection />
+      <Space h={28} />
+
       <HowDoesItWork />
       <Space h={28} />
       <FeatureRightListSection />

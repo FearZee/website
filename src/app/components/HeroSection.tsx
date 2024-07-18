@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 export const HeroSection = () => {
   return (
-    <section className={classNames("section", "lg:h-screen")}>
+    <section className={classNames("section", "lg:h-screen pt-24")}>
       <div className="flex gap-4 flex-col lg:flex-row">
         <div className="mt-24">
           <h1 className="lg:text-8xl sm:text-6xl text-4xl font-extrabold lg:w-[48rem] leading-[115%] uppercase">
@@ -16,8 +16,8 @@ export const HeroSection = () => {
             nicht nur Informationen und Konzepte, sondern auch maßgeschneiderte
             Handlungsoptionen und Umsetzung.
           </p>
-          <C2AButton className="mt-12 lg:w-[25rem] w-full">
-            Schedule a Call
+          <C2AButton className="mt-12 lg:w-[25rem] w-full" href="/contact">
+            Anruf vereinbaren
           </C2AButton>
         </div>
         <Image

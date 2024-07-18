@@ -31,7 +31,13 @@ const featureItems = [
 
 export const FeatureRightCard = () => {
   return (
-    <section className={classNames("section", "flex lg:flex-row flex-col")}>
+    <section
+      className={classNames(
+        "section",
+        "flex lg:flex-row flex-col scroll-my-16"
+      )}
+      id="our-ai"
+    >
       <div className="lg:max-w-[32rem]">
         <h2 className="h2">
           Verantwortungsvolle KI: Transparenz für eine sichere und faire Nutzung
