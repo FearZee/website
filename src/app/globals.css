@@ -20,6 +20,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background: #f2f1f1;
   margin: 0 0 0 1rem;
+  overflow-x: hidden;
 
   @media screen and (max-width: 640px) {
     margin: 0 0 0 0;

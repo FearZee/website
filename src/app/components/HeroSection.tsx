@@ -24,6 +24,7 @@ export const HeroSection = () => {
           {...image}
           alt="Hero section iamge"
           className="lg:h-[812px] object-cover xl:absolute w-auto xl:right-[-15rem]"
+          placeholder="blur"
         />
       </div>
     </section>

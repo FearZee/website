@@ -44,10 +44,8 @@ const items = [
 
 export const HowDoesItWork = () => {
   return (
-    <section className="section scroll-my-16" id="how-does-it-work">
-      <h2 className="h2 md:text-center">
-        Wie funktioniert unsere AI Plattform
-      </h2>
+    <section className="section scroll-my-16 relative" id="how-does-it-work">
+      <h2 className="h2 md:text-center">Wie funktioniert unsere Plattform</h2>
       <div className="flex flex-wrap gap-6 mt-12">
         {items.map((item) => (
           <WorkItem key={item.index} {...item} />

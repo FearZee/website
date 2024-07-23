@@ -5,6 +5,7 @@ interface C2AButtonProps {
   children: React.ReactNode;
   href: string;
   className?: string;
+  onClick?: () => void;
 }
 
 export const C2AButton = ({
@@ -14,7 +15,7 @@ export const C2AButton = ({
   ...props
 }: C2AButtonProps) => {
   return (
-    <Link
+    <a
       href={href || ""}
       className={classNames(
         className,
@@ -23,6 +24,6 @@ export const C2AButton = ({
       {...props}
     >
       {children}
-    </Link>
+    </a>
   );
 };
