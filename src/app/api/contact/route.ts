@@ -1,15 +1,36 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiResponse } from "next";
+import nodemailer from "nodemailer";
 
 type ResponseData = {
   name: string;
   company: string;
-  emnail: string;
+  email: string;
 };
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
-  const { name } = req.body;
+export async function POST(req: Request, res: NextApiResponse) {
+  const { name, email, company, phone } = await req.json();
 
-  console.log(req);
+  const transporter = nodemailer.createTransport({
+    port: 465,
+    host: "smtp.gmail.com",
+    auth: {
+      user: "novumbot@gmail.com",
+      pass: process.env.password,
+    },
+    secure: true,
+  });
 
-  return Response.json({ msg: "Hi" });
+  const mailData = {
+    from: "novumbot@gmail.com",
+    to: "sascha.zierke@novumanalytica.com",
+    subject: `Message From ${name}`,
+    text: `${name}, ${email}, ${company}, ${phone}`,
+  };
+
+  transporter.sendMail(mailData, function (err, info) {
+    if (err) console.log(err);
+    else console.log(info);
+  });
+
+  return new Response("Success", { status: 200 });
 }

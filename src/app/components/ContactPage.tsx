@@ -2,8 +2,36 @@
 
 import Image from "next/image";
 import image from "../../../public/katarinafedora-20-pdf.png";
-import { C2AButton } from "./C2AButton";
-import { ReactEventHandler, useState } from "react";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./Dialog";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "./Form";
+import { Input } from "./Input";
+import { Button } from "./Button";
+
+const formSchema = z.object({
+  name: z.string().min(2).max(50),
+  email: z.string().email(),
+  phone: z.string().min(6).max(20),
+  company: z.string().min(2).max(50),
+});
 
 export const ContactPage = () => {
   const [name, setName] = useState("");
@@ -11,26 +39,32 @@ export const ContactPage = () => {
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const handleSubmit = () => {
-    let data = {
-      name,
-      email,
-      phone,
-      company,
-    };
-    fetch("/api/contact", {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+    },
+  });
+
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    console.log("Submitting data", values);
+
+    fetch("/api/contact/", {
       method: "POST",
       headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(values),
     }).then((res) => {
-      console.log("Response received");
       if (res.status === 200) {
         console.log("Response succeeded!");
         setSubmitted(true);
+        setOpen(true);
         setName("");
         setEmail("");
         setPhone("");
@@ -40,27 +74,94 @@ export const ContactPage = () => {
   };
 
   return (
-    <section className="section h-screen">
-      <div className="flex gap-12 py-24 h-full">
-        <div className="w-3/4">
-          <h2 className="h2">Mit unserem Team kontakt aufnehmen</h2>
-          <p>
-            Lassen sie uns gemeinsam über Ihre erfolgreiche Zukunft sprechen
-          </p>
+    <section className="section min-h-screen">
+      <Dialog open={open} onOpenChange={(c) => setOpen(c)}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Wir haben Ihre Kontaktdaten erhalten</DialogTitle>
+            <DialogDescription>
+              Vielen Dank für Ihre Anfrage. Wir werden uns in Kürze bei Ihnen
+              melden.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+      <div className="flex lg:flex-row flex-col gap-12 py-24 h-full">
+        <div>
+          <div className="lg:w-full w-3/4">
+            <h2 className="h2">Mit unserem Team kontakt aufnehmen</h2>
+            <p>
+              Lassen sie uns gemeinsam über Ihre erfolgreiche Zukunft sprechen
+            </p>
+          </div>
           <div className="flex flex-col gap-8 mt-8">
-            <div className="flex gap-4">
-              <Input label="Name" value={name} onChange={setName} />
-              <Input label="Firma" value={company} onChange={setCompany} />
-            </div>
-            <Input label="Email" value={email} onChange={setEmail} />
-            <Input label="Telefon" value={phone} onChange={setPhone} />
-            <button className="w-full" onClick={handleSubmit}>
-              Kontaktieren Sie uns
-            </button>
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-4"
+              >
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="company"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Firma</FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Telefon</FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit">Kontakt aufnehmen</Button>
+              </form>
+            </Form>
           </div>
         </div>
-        <div className="h-full rounded-xl relative">
-          <h2 className="absolute p-8 text-3xl font-semibold leading-normal">
+        <div className="lg:h-[50rem] rounded-xl relative lg:order-last order-first">
+          <h2 className="lg:absolute lg:p-8 text-3xl font-semibold leading-normal">
             Unsere Trusted AI hilft uns Ihr Potential auszuschöpfen und das
             kontunierlich
           </h2>
@@ -71,8 +172,7 @@ export const ContactPage = () => {
           <Image
             {...image}
             alt="CEO Image"
-            className="rounded-xl h-full object-cover"
-            placeholder="blur"
+            className="rounded-xl lg:h-full h-[23rem] object-cover"
           />
         </div>
       </div>
@@ -85,21 +185,3 @@ interface InputProps {
   value?: string;
   onChange?: (value: string) => void;
 }
-
-const Input = ({ label, ...props }: InputProps) => {
-  return (
-    <div className="w-full">
-      <div className="relative w-full min-w-[200px] h-10">
-        <input
-          className="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
-          placeholder=" "
-          value={props.value}
-          onChange={(e) => props.onChange?.(e.target.value)}
-        />
-        <label className="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:!border-gray-900 after:border-blue-gray-200 peer-focus:after:!border-gray-900">
-          {label}
-        </label>
-      </div>
-    </div>
-  );
-};

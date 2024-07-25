@@ -27,9 +27,13 @@ export const Header = () => {
             <IconMenu />
           </DrawerTrigger>
           <DrawerContent className="p-2">
-            <Link className="text-3xl mb-4" href={"/"}>
+            <a
+              className="text-3xl mb-4"
+              href={"/"}
+              onClick={() => setOpen(false)}
+            >
               N|A
-            </Link>
+            </a>
             <a href="/" onClick={() => setOpen(false)}>
               Saas Platform
             </a>
