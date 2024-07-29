@@ -58,4 +58,7 @@ ENV PORT 3001
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
+ENV password=
+ARG password=
+
 CMD ["node", "server.js"]
