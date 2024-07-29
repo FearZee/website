@@ -34,8 +34,8 @@ export default function Home() {
         ct2Text="Gespräch vereinbaren"
       />
       <Space h={28} />
-      <FAQ />
-      <Space h={28} />
+      {/* <FAQ />
+      <Space h={28} /> */}
     </div>
   );
 }

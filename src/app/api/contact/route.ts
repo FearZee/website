@@ -22,7 +22,7 @@ export async function POST(req: Request, res: NextApiResponse) {
 
   const mailData = {
     from: "novumbot@gmail.com",
-    to: "sascha.zierke@novumanalytica.com",
+    to: "bengez@novumanalytica.com",
     subject: `Message From ${name}`,
     text: `${name}, ${email}, ${company}, ${phone}`,
   };
