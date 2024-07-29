@@ -54,10 +54,12 @@ export const CustomersList = () => {
           //   customLeftArrow={<CustomLeftArrow hovered={hovered} />}
         >
           {customers.map((customer, index) => (
-            <div className="flex justify-center items-center h-full">
+            <div
+              key={index}
+              className="flex justify-center items-center h-full"
+            >
               <Image
                 unselectable="on"
-                key={index}
                 src={customer}
                 alt={customer.name}
                 className={classNames(
