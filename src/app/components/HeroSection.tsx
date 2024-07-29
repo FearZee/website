@@ -11,8 +11,14 @@ export const HeroSection = () => {
       <div className="flex gap-4 flex-col lg:flex-row">
         <div className="mt-24">
           <h1 className="lg:text-8xl sm:text-6xl text-4xl font-extrabold lg:w-[48rem] leading-[115%] uppercase">
-            Die All-in-One Plattform für Ihr{" "}
-            <TypeWriter hats={["WACHSTUM", "FEATURE 2", "FEATURE 3"]} />
+            Die All-in-One Plattform, für
+            <TypeWriter
+              hats={[
+                "Kunden-Verhalten",
+                "Konkurrenz-Verhalten",
+                "Markt-Verhalten",
+              ]}
+            />
           </h1>
           <p className="max-w-[35rem] leading-normal mt-6">
             Intelligente Lösungen und persönliche Beratung für KMUs. Wir bieten
@@ -26,7 +32,7 @@ export const HeroSection = () => {
         <Image
           {...image}
           alt="Hero section iamge"
-          className="lg:h-[812px] object-cover xl:absolute w-auto xl:right-[-15rem]"
+          className="lg:h-[812px] object-cover xl:absolute w-auto xl:right-[-20rem]"
           placeholder="blur"
         />
       </div>
