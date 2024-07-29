@@ -1,4 +1,3 @@
-"use client";
 import { C2AButton } from "./C2AButton";
 import image from "../../../public/Frame 106.png";
 import Image from "next/image";
