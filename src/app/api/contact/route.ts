@@ -15,7 +15,7 @@ export async function POST(req: Request, res: NextApiResponse) {
     host: "smtp.gmail.com",
     auth: {
       user: "novumbot@gmail.com",
-      pass: process.env.password,
+      pass: process.env.PASSWORD,
     },
     secure: true,
   });
