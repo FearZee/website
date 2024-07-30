@@ -37,7 +37,7 @@ const englishKeywords = [
 export const metadata: Metadata = {
   title: "Novum Analytica",
   description:
-    "Novum Analytica GmbH ist Ihr Experte für maßgeschneiderte, szenariofähige KI- und Smart-Data-Produkte. Wir unterstützen Führungsorgane dabei, strategische Erfolgspositionen im gesamten Nachhaltigkeitsspektrum zu sichern. Entdecken Sie C:PAL, unseren Side-Kick für Vorstände, und erhalten Sie Entscheidungsgrundlagen für eine nachhaltige Zukunft.",
+    "Novum Analytica ist ein umfassendes Ökosystem aus Menschen - akademischen Forschern, Unternehmern, Visionären, Fachleuten, Experten - und einem Technologie-Stack, der über den Stand der Technik hinausgeht. Durch tiefgreifendes Fachwissen in KI-Technologien und in fortschrittlichen analytischen Methoden lösen wir die komplexen Herausforderungen auf, um KMUs und größere Organisationen in die Lage zu versetzen, Spitzenleistungen zu erzielen.",
   keywords: [
     ...germanKeywords,
     ...englishKeywords,
