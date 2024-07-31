@@ -23,7 +23,7 @@ export const Header = () => {
     return (
       <header>
         <Drawer direction="right" open={open} onOpenChange={setOpen}>
-          <DrawerTrigger>
+          <DrawerTrigger className="mt-4">
             <IconMenu />
           </DrawerTrigger>
           <DrawerContent className="p-2">

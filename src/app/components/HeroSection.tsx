@@ -6,7 +6,7 @@ import { TypeWriter } from "./TypeWriter";
 
 export const HeroSection = () => {
   return (
-    <section className={classNames("section", "lg:h-screen pt-10")}>
+    <section className={classNames("section", "lg:h-screen lg:pt-10")}>
       <div className="flex gap-4 flex-col lg:flex-row">
         <div className="mt-24">
           <h1 className="lg:text-8xl sm:text-6xl sm:w-3/4 text-5xl font-extrabold lg:w-[48rem] leading-[115%] uppercase">
