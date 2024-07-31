@@ -11,14 +11,18 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "./Drawer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { set } from "zod";
 
 export const CookieInfo = () => {
-  const cookieAccepted = localStorage.getItem("cookieAccepted");
-  const [open, setOpen] = useState(!cookieAccepted);
+  const [open, setOpen] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const cookieAccepted = window.localStorage.getItem("cookieAccepted");
+    setOpen(cookieAccepted !== "true");
+  }, []);
 
   const handleAcceptCookie = () => {
     localStorage.setItem("cookieAccepted", "true");
