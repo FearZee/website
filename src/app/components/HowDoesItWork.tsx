@@ -44,9 +44,9 @@ const items = [
 
 export const HowDoesItWork = () => {
   return (
-    <section className="section scroll-my-16 relative" id="how-does-it-work">
+    <section className="color-section mx-2 sm:mx-4 w-auto scroll-my-16 relative bg-indigo-800 rounded-2xl p-4 py-10 text-white" id="how-does-it-work">
       <h2 className="h2 md:text-center">Wie funktioniert unsere Plattform</h2>
-      <div className="flex flex-wrap gap-6 mt-12">
+      <div className="flex flex-wrap items-center lg:w-[1225px] gap-6 mt-12">
         {items.map((item) => (
           <WorkItem key={item.index} {...item} />
         ))}
@@ -70,7 +70,7 @@ interface WorkItemProps {
 
 const WorkItem = ({ title, description, icon, index }: WorkItemProps) => {
   return (
-    <article className="p-6 flex flex-col gap-4 bg-indigo-100 rounded-2xl xl:w-[600px] md:w-[48%]">
+    <article className="p-6 flex flex-col gap-4 bg-indigo-200 text-black rounded-2xl xl:w-[600px] md:w-[48%]">
       <div className="flex gap-4">
         <div className="rounded-[100%] sm:p-4 p-2 bg-white sm:w-20 sm:h-20 h-10 w-10 sm:text-3xl text-xl flex items-center justify-center">
           {index}

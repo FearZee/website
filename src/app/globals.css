@@ -21,10 +21,14 @@ body {
 
 @layer components {
   .section {
-    @apply max-w-7xl lg:max-w-screen-xl xl:mx-auto mx-4 relative xl:overflow-visible overflow-hidden;
+    @apply max-w-7xl lg:max-w-screen-xl xl:mx-auto mx-4 relative lg:overflow-visible overflow-hidden;
   }
 
   .h2 {
     @apply lg:text-5xl text-3xl font-bold leading-normal;
+  }
+
+  .color-section{
+    @apply  w-full flex flex-col items-center justify-center;
   }
 }

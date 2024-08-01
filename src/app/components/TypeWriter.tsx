@@ -9,7 +9,7 @@ export const TypeWriter = ({ hats }: any) => {
     "animate-cursor overflow-hidden  transition-[width] ease-in-out duration-1000 mr-auto";
 
   useEffect(() => {
-    setTimeout(() => setCollapseClass(" w-full xl:w-[95%]"), 100);
+    setTimeout(() => setCollapseClass(" w-full 2xl:w-[95%]"), 100);
 
     const incrementHat = async () => {
       // Set the width to 0 - transition duration is 1000ms
@@ -32,7 +32,7 @@ export const TypeWriter = ({ hats }: any) => {
       }, 1100);
       // After 1000ms, set width to 100% - transition duration is 1000ms
       setTimeout(() => {
-        setCollapseClass(" w-full xl:w-[95%]");
+        setCollapseClass(" w-full 2xl:w-[95%]");
       }, 1000);
     };
     // Interval timer to change text every 4000ms

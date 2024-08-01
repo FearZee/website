@@ -20,8 +20,8 @@ export const TestimonialsSection = () => {
   );
 
   return (
-    <section className="section">
-      <article className="flex flex-col gap-12 justify-center align-middle">
+    <section className="color-section bg-zinc-200 px-6 py-10">
+      <article className="flex flex-col gap-12 justify-center align-middle max-w-6xl">
         <div className="flex gap-1 justify-center">
           <IconStarFilled />
           <IconStarFilled />
