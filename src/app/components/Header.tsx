@@ -14,10 +14,30 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { Drawer, DrawerContent, DrawerTrigger } from "./Drawer";
 import { IconMenu } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
+import classNames from "classnames";
 
 export const Header = () => {
   const isDesktop = useMediaQuery("(min-width: 1024px)");
   const [open, setOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+
+    if (currentScrollPos < prevScrollPos || currentScrollPos <= 40) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isVisible, handleScroll]);
 
   if (!isDesktop) {
     return (
@@ -53,7 +73,8 @@ export const Header = () => {
   }
 
   return (
-    <header>
+    <header className={classNames("w-full bg-zinc-900/70 text-white fixed top-0 z-10 transition-all duration-200 backdrop-blur-sm", {'translate-y-[-2rem]': !isVisible})}>
+      {isVisible &&
       <div className="flex justify-center items-center p-4">
         <Link className="text-3xl  absolute left-4" href={"/"}>
           N|A
@@ -68,7 +89,7 @@ export const Header = () => {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="list-none bg-[#f2f1f1]">
+              <NavigationMenuContent className="list-none bg-zinc-800">
                 <NavigationMenuItem className="p-4 w-96">
                   <Link href="#how-does-it-work" legacyBehavior passHref>
                     <NavigationMenuLink className="no-underline font-medium">
@@ -113,12 +134,12 @@ export const Header = () => {
           </NavigationMenuList>
         </NavigationMenu>
         <C2AButton
-          className="lg:w-[10rem] w-full h-10 text-sm align-middle p-0 justify-center items-center flex px-2 absolute right-4"
+          className="lg:w-[10rem] w-full h-10 text-sm align-middle p-0 justify-center items-center flex px-2 absolute right-4 text-black"
           href="/contact"
         >
           Anruf vereinbaren
         </C2AButton>
-      </div>
+      </div>}
     </header>
   );
 };

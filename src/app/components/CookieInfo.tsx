@@ -13,7 +13,6 @@ import {
 } from "./Drawer";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { set } from "zod";
 
 export const CookieInfo = () => {
   const [open, setOpen] = useState(false);
@@ -41,7 +40,7 @@ export const CookieInfo = () => {
       onClose={() => setOpen(false)}
       onOpenChange={(open) => setOpen(open)}
     >
-      <DrawerTrigger className="2xl:fixed 2xl:bottom-12 2xl:left-6 2xl:top-auto absolute md:left-24 md:top-[20px] top-4 right-4 z-10">
+      <DrawerTrigger className="2xl:fixed w-8 text-white 2xl:text-black 2xl:bottom-12 2xl:left-6 2xl:top-auto absolute md:left-24 md:top-[20px] top-4 right-4 z-10">
         <IconFingerprint size={32} />
       </DrawerTrigger>
       <DrawerContent className="w-96 lg:ml-20">

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { CookieInfo } from "./components/CookieInfo";
+import classNames from "classnames";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -78,10 +79,11 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-      <body className={inter.className}>
+      <body className={classNames(inter.className, )}>
         <Header />
         <CookieInfo />
-        {children}
+        <div className="h-20"></div>
+          {children}
         <Footer />
       </body>
     </html>
