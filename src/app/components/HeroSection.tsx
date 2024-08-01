@@ -30,7 +30,7 @@ export const HeroSection = () => {
         </div>
         <Image
           {...image}
-          alt="Hero section iamge"
+          alt="Hero section image"
           className="lg:h-[812px] object-cover xl:absolute w-auto xl:right-[-20rem]"
         />
       </div>
