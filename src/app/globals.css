@@ -28,7 +28,7 @@ body {
     @apply lg:text-5xl text-3xl font-bold leading-normal;
   }
 
-  .color-section{
-    @apply  w-full flex flex-col items-center justify-center;
+  .color-section {
+    @apply w-full flex flex-col items-center justify-center;
   }
 }
