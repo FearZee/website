@@ -11,7 +11,7 @@ import image40Card from "../../../public/Frame 3.png";
 import imageChart from "../../../public/Frame 1.png";
 
 export const HeroSection = () => {
-  const isMobile = useMediaQuery("(min-width: 1536px)");
+  const isMobile = useMediaQuery("(min-width: 768px)");
 
   return (
     <section className={classNames("section", "lg:h-screen lg:pt-10 mb-4")}>
@@ -53,13 +53,15 @@ export const HeroSection = () => {
           <Image
             {...image40Card}
             alt="Hero section image"
-            className="absolute lg:right-6 lg:top-[-2rem] top-0 right-0 lg:w-auto md:w-[200px] w-[150px]"
+            className="absolute lg:right-6 lg:top-[-2rem] bottom-4 right-0 lg:w-auto md:w-[200px] w-[150px]"
           />
-          <Image
-            {...imageChart}
-            alt="Hero section image"
-            className="absolute lg:left-[-6rem] left-0 lg:bottom-8 bottom-0 lg:w-auto md:w-[300px] w-[250px]"
-          />
+          {isMobile && (
+            <Image
+              {...imageChart}
+              alt="Hero section image"
+              className="absolute lg:left-[-6rem] left-0 lg:bottom-8 bottom-0 lg:w-auto md:w-[300px] w-[250px]"
+            />
+          )}
         </div>
 
         {/* )} */}

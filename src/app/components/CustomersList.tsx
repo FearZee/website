@@ -39,7 +39,7 @@ export const CustomersList = () => {
   const [visible, setVisible] = useState(0);
 
   return (
-    <section className="section mb-10 mt-10 sm:mb-20">
+    <section className="section mb-10 mt-20 sm:mb-20">
       <h2 className="text-center mb-10">Unsere Partner</h2>
       <div className="relative h-40">
         <Carousel
