@@ -47,8 +47,7 @@ export const CookieInfo = () => {
         <DrawerHeader>
           <DrawerTitle>Cookie Informationen</DrawerTitle>
           <DrawerDescription>
-            Wir verwenden nur notwendige Cookies, um die Funktionalität unserer
-            Website zu gewährleisten.
+            Wir verwenden keine Cookies auf unserer Website.
           </DrawerDescription>
         </DrawerHeader>
         <DrawerFooter>
