@@ -17,6 +17,7 @@ import { useEffect, useState } from "react";
 import classNames from "classnames";
 import logo from "../../../public/logo.svg";
 import Image from "next/image";
+import { Logo } from "./Logo";
 
 export const Header = () => {
   const isDesktop = useMediaQuery("(min-width: 1024px)");
@@ -54,7 +55,7 @@ export const Header = () => {
               href={"/"}
               onClick={() => setOpen(false)}
             >
-              <Image src={logo} alt="Logo" />
+              <Logo size={64} color="black" />
             </a>
             <a href="/" onClick={() => setOpen(false)}>
               Saas Platform
@@ -84,7 +85,7 @@ export const Header = () => {
       {isVisible && (
         <div className="flex justify-center items-center p-4">
           <Link className="text-3xl  absolute left-4" href={"/"}>
-            <Image src={logo} alt="Logo" className="w-14" />
+            <Logo size={56} />
           </Link>
           <NavigationMenu>
             <NavigationMenuList className="">
