@@ -29,7 +29,7 @@ export const TestimonialsSection = () => {
           <IconStarFilled />
           <IconStarFilled />
         </div>
-        <p className="sm:text-3xl text-2xl text-center sm:leading-normal leading-normal">
+        <p className="xl:text-3xl text-xl text-center sm:leading-normal leading-normal">
           {selectedTestimonial.text}
         </p>
         <div className="flex flex-col justify-center items-center">
