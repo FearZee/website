@@ -7,19 +7,19 @@ import "react-multi-carousel/lib/styles.css";
 
 const responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
+    breakpoint: { max: 3000, min: 1250 },
     items: 2,
     partialVisibilityGutter: 40, // this is needed to tell the amount of px that should be visible.
   },
   tablet: {
-    breakpoint: { max: 1024, min: 464 },
+    breakpoint: { max: 1250, min: 780 },
     items: 2,
-    partialVisibilityGutter: 30, // this is needed to tell the amount of px that should be visible.
+    partialVisibilityGutter: 10, // this is needed to tell the amount of px that should be visible.
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 780, min: 0 },
     items: 1,
-    partialVisibilityGutter: 20, // this is needed to tell the amount of px that should be visible.
+    partialVisibilityGutter: 40, // this is needed to tell the amount of px that should be visible.
   },
 };
 
@@ -32,7 +32,7 @@ const MultiCarousel = ({ items }: MultiItemCarouselProps) => {
 
   return (
     <div
-      className="lg:w-[45rem] lg:ml-12"
+      className="xl:w-[45rem] lg:w-[48%] lg:ml-12"
       onMouseOver={() => setHovered(true)}
       onMouseOut={() => setHovered(false)}
     >
@@ -47,7 +47,7 @@ const MultiCarousel = ({ items }: MultiItemCarouselProps) => {
       >
         {items.map((item, index) => (
           <div
-            className="rounded-2xl bg-white p-6 flex flex-col gap-4 w-[18rem] h-full select-none"
+            className="rounded-2xl ml-2 bg-white p-6 flex flex-col xl:gap-4 xl:w-[18rem] h-full select-none"
             key={index}
           >
             <h3 className="text-lg font-semibold">{item.title}</h3>
