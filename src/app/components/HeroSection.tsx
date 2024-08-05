@@ -14,7 +14,7 @@ export const HeroSection = () => {
   const isMobile = useMediaQuery("(min-width: 768px)");
 
   return (
-    <section className={classNames("section", "lg:h-screen lg:pt-10 mb-4")}>
+    <section className={classNames("section", "xl:h-screen lg:pt-10 mb-4")}>
       <div className="flex gap-4 flex-col lg:flex-row">
         <div className="mt-24">
           <h1 className="xl:text-8xl md:text-7xl sm:text-6xl sm:w-3/4 text-5xl font-extrabold xl:w-[48rem] md:w-full leading-[115%] uppercase">

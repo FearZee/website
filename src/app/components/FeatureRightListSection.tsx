@@ -24,16 +24,16 @@ export const FeatureRightListSection = () => {
     <section
       className={classNames(
         "section",
-        "flex flex-col lg:flex-row scroll-my-16"
+        "flex flex-col xl:flex-row scroll-my-16"
       )}
       id="our-mission"
     >
-      <div className="lg:max-w-[44rem]">
+      <div className="xl:max-w-[44rem]">
         <h2 className="h2">
           Innovative Technologien für Ihr nachhaltiges Wachstum und Ihre
           digitale Transformation
         </h2>
-        <p className="lg:max-w-[80%] lg:mt-12 md:mt-4 mt-8 mb-8 md:mb-0">
+        <p className="xl:max-w-[80%] xl:mt-12 md:mt-4 mt-8 mb-8 md:mb-0">
           Unsere Vision ist es, Unternehmen mit hochmodernen
           Intelligenzdiensten, Technologien und KI-Produkten auszustatten, die
           Komplexitäten vereinfachen und Effizienz steigern. Wir möchten die
@@ -41,13 +41,13 @@ export const FeatureRightListSection = () => {
           digitalen Landschaft sein.
         </p>
       </div>
-      <div className="flex flex-col lg:gap-6 md:gap-8 gap-12 lg:ml-12 sm:mt-12 mt-8 lg:mt-0 w-fit">
+      <div className="flex flex-col xl:gap-6 md:gap-8 gap-12 xl:ml-12 sm:mt-12 mt-8 xl:mt-0 w-fit">
         {featureItems.map((item, index) => (
           <article key={index}>
             <h3 className="text-xl text-indigo-600 font-semibold mb-1">
               {item.title}
             </h3>
-            <p className="text-md lg:w-full w-4/5">{item.text}</p>
+            <p className="text-md xl:w-full w-4/5">{item.text}</p>
           </article>
         ))}
       </div>
