@@ -62,6 +62,7 @@ export const CustomersList = () => {
                 unselectable="on"
                 src={customer}
                 alt={customer.name}
+                height={176}
                 className={classNames(
                   "h-auto w-auto max-w-44 pointer-events-none select-none"
                 )}

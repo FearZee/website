@@ -33,6 +33,8 @@ export const ProblemSection = () => {
         <Image
           {...image}
           alt="Problem image"
+          height={600}
+          width={800}
           className="rounded-xl sm:w-4/6 object-cover sm:mt-0 mt-6"
         />
       </div>
